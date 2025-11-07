@@ -1,15 +1,15 @@
 package com.alejandro.marketplace.model;
-public class producto {
+public class Producto {
     private String id;
     private String nombre;
     private String descripcion;
     private String precio;
     private String imagenUrl;
 
-    public producto() {
+    public Producto() {
     }
     // Constructor con todos los campos
-    public producto(String id, String nombre, String descripcion, String precio, String imagenUrl) {
+    public Producto(String id, String nombre, String descripcion, String precio, String imagenUrl) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;

@@ -1,15 +1,12 @@
 package com.alejandro.marketplace;
-
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.alejandro.marketplace.R;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 
 public class DetalleProductoActivity extends AppCompatActivity {
@@ -30,6 +27,10 @@ public class DetalleProductoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_producto);
+
+        this.telefonoVendedor ="123456789";
+        Log.i(TAG, "Teléfono del vendedor: " + telefonoVendedor);
+
         // 1. Inicializar Vistas
         ivImagenDetalle = findViewById(R.id.iv_detalle_imagen);
         tvNombreDetalle = findViewById(R.id.tv_detalle_titulo);
@@ -41,12 +42,13 @@ public class DetalleProductoActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String productoId = intent.getStringExtra(EXTRA_PRODUCTO_ID);
         // SEMANA 4: Obtener el número de teléfono enviado por el Intent
-        if (intent.hasExtra(EXTRA_TELEFONO_VENDEDOR)) {
+        /*if (intent.hasExtra(EXTRA_TELEFONO_VENDEDOR)) {
             telefonoVendedor = intent.getStringExtra(EXTRA_TELEFONO_VENDEDOR);
         } else {
             telefonoVendedor = "";
             Log.w(TAG, "ADVERTENCIA: No se recibió el número de teléfono del vendedor.");
-        }
+        }*/
+
         if (productoId != null) {
             Toast.makeText(this, "Detalles cargados para el ID: " + productoId,
                     Toast.LENGTH_SHORT).show();
@@ -64,8 +66,8 @@ public class DetalleProductoActivity extends AppCompatActivity {
     private void cargarDatosSimulados(String id) {
         tvNombreDetalle.setText("Bicicleta Eléctrica Turbo X" + id.substring(0, 2));
         tvPrecioDetalle.setText("$450.000 CLP");
-        tvDescripcionDetalle.setText("Modelo 2024, casi nueva. Perfecta para la ciudad y subircuestas sin esfuerzo. Incluye cargador y garantía.");
-                tvVendedorDetalle.setText("Usuario: DiegoDev");
+        tvDescripcionDetalle.setText("Modelo 2024, casi nueva. Perfecta para la ciudad y subir cuestas sin esfuerzo. Incluye cargador y garantía.");
+        tvVendedorDetalle.setText("Usuario: DiegoDev");
     }
     private void realizarLlamada() {
         // Validación: Verifica si hay un número disponible
@@ -83,7 +85,7 @@ public class DetalleProductoActivity extends AppCompatActivity {
             if (intentLlamada.resolveActivity(getPackageManager()) != null) {
                 startActivity(intentLlamada);
             } else {
-                Toast.makeText(this, "No se encontró una aplicación para realizar llamadas en eldispositivo.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "No se encontró una aplicación para realizar llamadas en el dispositivo.", Toast.LENGTH_LONG).show();
             }
             // Manejo de Excepciones: Para errores inesperados al lanzar el Intent
         } catch (Exception e) {

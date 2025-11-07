@@ -28,8 +28,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="80dp"> <!-- Padding para que el FAB no tape el
-contenido -->
+            android:paddingBottom="80dp"> <!-- Padding para que el FAB no tape elcontenido -->
             <!-- Imagen Principal del Producto (ocupará todo el ancho) -->
             <ImageView
                 android:id="@+id/iv_detalle_imagen"
