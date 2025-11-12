@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MarketPlaces">
         <activity
+            android:name=".CambiarPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Editar_Perfil_Activity"
+            android:exported="false" />
+        <activity
             android:name=".ChatActivity"
             android:exported="false" />
         <activity
