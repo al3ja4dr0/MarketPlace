@@ -8,10 +8,10 @@ import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
+
 import java.util.Calendar;
 
-public class Editar_Perfil_Activity extends AppCompatActivity {
+public class EditarPerfilActivity extends AppCompatActivity {
 
     // Vistas del Layout
     private Toolbar toolbar;

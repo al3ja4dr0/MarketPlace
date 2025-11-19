@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1051706847554",
+    "project_id": "marketplace-fv",
+    "storage_bucket": "marketplace-fv.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051706847554:android:fd421ee0c8ac7d98cad8db",
+        "android_client_info": {
+          "package_name": "com.alejandro.marketplace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh1BiPapAQVhJhMbXKhKapItezo8q7Q7E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

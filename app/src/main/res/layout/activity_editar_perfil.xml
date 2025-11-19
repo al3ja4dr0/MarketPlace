@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".Editar_Perfil_Activity">
+    tools:context=".EditarPerfilActivity">
 
     <!-- AppBar (Barra Superior) con Botón de Retroceso -->
     <com.google.android.material.appbar.AppBarLayout
