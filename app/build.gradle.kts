@@ -51,4 +51,9 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 
     implementation("com.hbb20:ccp:2.7.0")
+
+ 
+    implementation("com.google.firebase:firebase-storage:20.3.0")
+
+
 }
