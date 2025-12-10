@@ -131,4 +131,26 @@ public class AnunciosActivity extends AppCompatActivity {
             rvMisAnuncios.setVisibility(View.VISIBLE);
         }
     }
+
+    public static class MisanunciosActivity extends AppCompatActivity {
+
+        RecyclerView recycler;
+        ProductoAdapter adaptador;
+        ArrayList<Producto> listaMisAnuncios;
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_misanuncios);
+
+            recycler = findViewById(R.id.recyclerMisAnuncios);
+            recycler.setLayoutManager(new LinearLayoutManager(this));
+
+            // Obtener solo los productos del usuario
+            listaMisAnuncios = Producto.getMisProductos();
+
+            adaptador = new ProductoAdapter(listaMisAnuncios, true);
+            recycler.setAdapter(adaptador);
+        }
+    }
 }

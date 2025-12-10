@@ -7,7 +7,7 @@
         android:required="false" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
@@ -23,10 +23,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MarketPlaces">
         <activity
+            android:name=".EditarPerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MisAnunciosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditarProductoActivity"
+            android:exported="false" />
+        <activity
             android:name=".CambiarPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".EditarPerfilActivity"
+            android:name=".EditarProductoActivity"
             android:exported="false" />
         <activity
             android:name=".ChatActivity"

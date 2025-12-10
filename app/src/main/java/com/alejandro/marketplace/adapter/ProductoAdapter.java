@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 
 // Importación de Glide para la carga de imágenes
+import com.alejandro.marketplace.EditarProductoActivity;
 import com.bumptech.glide.Glide;
 
 import com.alejandro.marketplace.DetalleProductoActivity;
@@ -81,7 +82,36 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
             // Enviamos el ID del producto seleccionado a la pantalla de detalle
             intent.putExtra(DetalleProductoActivity.EXTRA_PRODUCTO_ID, producto.getId());
             context.startActivity(intent);
+
         });
+        holder.btnOpciones.setOnClickListener(v -> {
+            android.widget.PopupMenu popup = new android.widget.PopupMenu(context, v);
+            popup.inflate(R.menu.menu_producto_opciones); // menu con Editar / Eliminar
+
+            popup.setOnMenuItemClickListener(item -> {
+                int id = item.getItemId();
+
+                if (id == R.id.action_editar) {
+                    Intent intent = new Intent(context, EditarProductoActivity.class);
+                    intent.putExtra("PRODUCTO_ID", producto.getId());
+                    context.startActivity(intent);
+                    return true;
+                }
+
+                if (id == R.id.action_eliminar) {
+                    if (context instanceof com.alejandro.marketplace.MisAnunciosActivity) {
+                        ((com.alejandro.marketplace.MisAnunciosActivity) context)
+                                .eliminarProducto(producto.getId());
+                    }
+                    return true;
+                }
+
+                return false;
+            });
+
+            popup.show();
+        });
+
     }
 
 
@@ -138,6 +168,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
         ImageView ivImagenProducto;
         TextView tvNombre;
         TextView tvPrecio;
+        ImageView btnOpciones;
 
         public ProductoViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -145,6 +176,10 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
             ivImagenProducto = itemView.findViewById(R.id.iv_producto_imagen);
             tvNombre = itemView.findViewById(R.id.tv_producto_titulo);
             tvPrecio = itemView.findViewById(R.id.tv_producto_precio);
+            btnOpciones = itemView.findViewById(R.id.btnOpciones);
+
+
         }
     }
+
 }

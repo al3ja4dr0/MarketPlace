@@ -139,4 +139,30 @@ public class Producto {
     public void setImageUrls(List<String> imageUrls) {
         this.imageUrls = imageUrls;
     }
+
+    public static Producto buscarPorId(int id) {
+        for (Producto p : listaProductos) {
+            if (p.getId() == id) return p;
+        }
+        return null;
+    }
+
+    public static void eliminarProducto(int id) {
+        for (int i = 0; i < listaProductos.size(); i++) {
+            if (listaProductos.get(i).getId() == id) {
+                listaProductos.remove(i);
+                break;
+            }
+        }
+    }
+
+    public static ArrayList<Producto> getMisProductos() {
+        ArrayList<Producto> lista = new ArrayList<>();
+        for (Producto p : listaProductos) {
+            if (p.esDelUsuario) lista.add(p);   // este campo debe existir
+        }
+        return lista;
+    }
+
+
 }
